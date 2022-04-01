@@ -17,10 +17,10 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='signup' element={<SignUp />} />
+          <Route path='services' element={<Services />} />
           <Route path='products' element={<Products />} />
           <Route path='contactus' element={<ContactUs />} />
-          <Route path='services' element={<Services />} />
+          <Route path='signup' element={<SignUp />} />
         </Routes>
       </Router>
     </div>
