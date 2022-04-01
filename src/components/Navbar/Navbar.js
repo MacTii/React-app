@@ -14,22 +14,28 @@ class Navbar extends Component {
     render () {
         return(
             <nav className='NavbarItems'>
-                <h1 className='navbar-logo'>Shop <i class="fas fa-sack-dollar"></i></h1>
-                <div className='menu-icon' onClick={this.handleClick}>
+                <h1 className='navbar-logo'>
+                    <Link to='/'>
+                        Shop <i class="fas fa-sack-dollar" />
+                    </Link>
+                </h1>
+                <div className='menu-icon' onClick={this.handleClick}> 
                     <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
                 </div>
                 <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
                     {MenuItems.map((item, index)=> {
                         return(
                             <li key={index}>
-                                <Link className={item.cName} to={item.url}>
+                                <Link to={item.url} className={item.cName}>
                                     {item.title}
-                                </Link>
+                                </Link> 
                             </li>
                         )
                     })}
                 </ul>
-                <Button>Sign Up</Button>
+                <Link to='signup'>
+                    <Button>Sign Up</Button>
+                </Link>
             </nav>
         )
     }
